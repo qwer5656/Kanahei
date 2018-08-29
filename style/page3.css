@@ -1,0 +1,143 @@
+<style>
+#head
+{
+ background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+.lk
+{
+	display: block;
+	float: left;
+    text-decoration: none;
+    width: 180px;
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
+.lk:hover
+{
+	color: black;
+	background-color: gray;
+}
+#lkparent
+{
+	background-color: black;
+
+}
+#lkparent::after
+{
+ content: "";
+ display: block;
+ clear:both;
+}
+*
+{
+	 box-sizing: border-box;
+	padding: 0;	
+}
+body {
+  margin: 0;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+.column
+{
+	width: 33%;
+	padding: 15px;
+	float: left;
+}
+#midle::after
+{
+	content: "";
+	display: block;
+	clear:both;
+}
+.leftrow
+{
+	width:75%;
+	float:left;
+}
+.rightrow
+{
+	width:25%;
+	float: left;
+	padding-left: 10px;
+}
+@media screen and (max-width:1000px)
+{
+	.leftrow,.rightrow
+	{
+		width: 100%;
+	}
+
+}
+@media screen and (max-width:1000px)
+{
+	.lk
+	{
+		width: 100%;
+		float: none;
+	}
+
+}
+.rabbit
+{
+	background-color: #fffcfc;
+    text-align: center;
+    border: 5px solid red;
+    position: relative;
+	z-index: 1;
+}
+.Wrinkle::before
+{
+	content: '';
+  border-top:25px solid red;
+  border-right:25px solid white; 
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+
+
+}
+.rabbit div
+{
+	position: absolute;
+    top: 0px;
+    left: -28px;
+    border-bottom: 20px solid pink;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    color: white;
+    width: 75px;
+    height: 0px;
+    text-align: center;
+    transform: rotate(-45deg);
+    line-height: 20px;
+
+}
+.rabbithot::before
+{
+	 content: '';
+    width: 10px;
+    height: 6px;
+    position: absolute;
+    top: -9.5px;
+    left: 33px;
+    background-color: #f45b76;
+    z-index: -1;
+}
+.rabbithot::after
+{
+	content: '';
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    top: 38px;
+    left: -10px;
+    background-color: #f45b76;
+    z-index: -1;
+}
+</style>
