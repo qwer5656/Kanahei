@@ -7,7 +7,39 @@
  <link rel="stylesheet" type="text/css" href="style/page3.css">
 
 <style>
+.kanaheisize
+{
+appearance:none;
+ -webkit-appearance: none;
+width: 100%;
+height:20px;
+border-radius: 5px;
+background-color:pink;
+box-shadow: 5px 5px 10px #e4677d;
 
+}
+.kanaheisize::-webkit-slider-thumb
+{
+appearance:none;
+ -webkit-appearance: none;
+width: 50px;
+height:50px;
+background: url("img/fire.gif");
+background-size:cover;
+border: 0;
+ cursor: pointer;
+
+
+}
+.kanaheisize::-moz-range-thumb
+{
+	width: 50px;
+height:50px;
+background: url("img/fire.gif");
+background-size:cover;
+border: 0;
+ cursor: pointer;
+}
 
 </style>
 
@@ -49,8 +81,9 @@
 
 
 <div  id="page1" class="pages" >
-	
-
+	<span>卡拉大小:</span><input class="kanaheisize" type="range" max="100" min="0" value="0" step="1" oninput="bigcat(this.value)">
+	<span>卡拉移動:</span><input class="kanaheisize" type="range" max="100" min="0" value="0" step="1" oninput="movecat(this.value)" id="catpos">
+   <div style="position: relative;"><img src="img/sticker.png" id="cat" style="position: absolute;left: 0"></div>
 </div>
 
 
@@ -157,6 +190,23 @@
         }
 
 
+	}
+	function bigcat(value)
+	{
+        let cat=document.getElementById("cat")||document.querySelector("#cat");
+         let w=278+parseInt(value);
+        let catpos=document.getElementById("catpos")||document.querySelector("#catpos");
+          let screen=document.documentElement.offsetWidth||document.body.offsetWidth;
+          let pos=(screen-w-10)*(parseInt(catpos.value)*0.01);  
+        cat.style.width=w+"px";
+        cat.style.left=pos+"px";
+	}
+	function  movecat(value) {
+		let cat=document.getElementById("cat")||document.querySelector("#cat");
+          let w= cat.width;
+          let screen=document.documentElement.offsetWidth||document.body.offsetWidth;
+          let pos=(screen-w-10)*(parseInt(value)*0.01);         
+        cat.style.left=pos+"px";
 	}
 </script>
 
