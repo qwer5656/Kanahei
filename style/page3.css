@@ -14,15 +14,19 @@
     padding: 15px;
     color: white;
     text-align: center;
+    background-color: #ff37374a;
+   
+    border-radius: 5px;
+   
 }
 .lk:hover
 {
-	color: black;
-	background-color: gray;
+	color: red;
+	background-color: rgb(255, 74, 74);
 }
 #lkparent
 {
-	background-color: black;
+	
 
 }
 #lkparent::after
