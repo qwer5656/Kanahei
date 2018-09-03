@@ -5,50 +5,112 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>卡納赫拉</title>
  <link rel="stylesheet" type="text/css" href="style/page3.css">
-
+<link rel="stylesheet" type="text/css" href="style/page2.css">
 <style>
-.kanaheisize
+#page0
 {
-appearance:none;
- -webkit-appearance: none;
-width: 100%;
-height:20px;
-border-radius: 5px;
-background-color:pink;
-box-shadow: 5px 5px 10px #e4677d;
+	background-color:pink;
+	width:100%;
+}
+.messageborder
+{
+position: relative;
+z-index: 1;
+right: 0px;
+margin: 0 auto;
+height: 300px;
 
 }
-.kanaheisize::-webkit-slider-thumb
+.message
 {
-appearance:none;
- -webkit-appearance: none;
-width: 50px;
-height:50px;
-background: url("img/fire.gif");
-background-size:cover;
-border: 0;
- cursor: pointer;
-  -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
+	border-radius: 5px;
+	background-color:white;
+	width:300px;
+	box-shadow:10px 10px 5px red;
+	position: absolute;
+	top:20px;
+	margin-bottom: 100px;
+    left:80px;
+     z-index: 1;
+     transition: 0.5s;
+	
+}
+.message:hover
+{
+	
+  transform: translate(-10px,-10px);
+   
+  box-shadow:25px 25px 5px red;
+}
+.messageborder:nth-child(even) .message
+{
+	left: initial;
+	right: 80px;
+	box-shadow:-10px 10px 5px red;
+}
 
+.messageborder:nth-child(even) .message:hover
+{
+	 transform: translate(10px,-10px);
+   
+  box-shadow:-25px 25px 5px red;
+}
+.message::before
+{
+	content: "";
+    position: absolute;
+    display: block;
+    background-color:white;
+    width:20px;
+    height: 20px;
+    transform:rotate(45deg);
+    top:10px;
+    left:-10px; 
+    z-index: -1;
 
 }
-.kanaheisize::-moz-range-thumb
+.messageborder::before
 {
-	width: 50px;
-height:50px;
-background: url("img/fire.gif");
-background-size:cover;
-border: 0;
- cursor: pointer;
-  -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-}
+	content: "";
+    position: absolute;
+    display: block;
+    border:5px solid white;
+    width:20px;
+    height: 20px;
+    top:28px;
+    left:-50%; 
+    border-radius: 50%;
+    z-index: -1;
+    margin-left: -5px;
 
+}
+.messageborder:nth-child(even) .message::before
+{
+	left: initial;
+	right: -10px;
+}
+.messagetop
+{
+	width:100%;
+	padding: 10px;
+	font-size:25px;
+	font-weight: bold;
+}
+.messagebottom
+{
+	width:100%;
+	padding: 10px;
+}
+.backgroundbox
+{
+	width: 10px;
+	height: 1000px;
+	background-color:rgba(255,255,255,0.3);
+	padding-top: 50px;
+	margin: 0 auto;
+
+}
 </style>
-
 
 </head>
 <body>
@@ -64,7 +126,27 @@ border: 0;
 
 
 <div  id="page0" class="pages">
-	
+	<div class="backgroundbox">
+	<div class="messageborder">
+		<div class="message">
+			<div class="messagetop"></div>
+			<div class="messagebottom"></div>
+		</div>
+	</div>
+	<div class="messageborder">
+		<div class="message" >
+			<div class="messagetop"></div>
+			<div class="messagebottom"></div>
+		</div>
+	</div>
+	<div class="messageborder">
+		<div class="message">
+			<div class="messagetop"></div>
+			<div class="messagebottom"></div>
+		</div>
+	</div>
+   </div>
+
 </div>
 
 
@@ -86,7 +168,7 @@ border: 0;
 <!---------- 第二頁開始------------>
 
 
-<div  id="page1" class="pages" >
+<div  id="page1" class="pages" style="display: none">
 	<span>卡拉大小:</span><input class="kanaheisize" type="range" max="100" min="0" value="0" step="1" oninput="bigcat(this.value)">
 	<span>卡拉移動:</span><input class="kanaheisize" type="range" max="100" min="0" value="0" step="1" oninput="movecat(this.value)" id="catpos">
    <div style="position: relative;"><img src="img/sticker.png" id="cat" style="position: absolute;left: 0"></div>
@@ -214,6 +296,29 @@ border: 0;
           let pos=(screen-w-10)*(parseInt(value)*0.01);         
         cat.style.left=pos+"px";
 	}
+let timedata=[{
+year:"下午茶時光琺瑯杯",
+content:"全新「咖啡系列」主題設計的杯子共推出6款，容量為500ml。琺瑯杯贈品外盒採取6款連續圖樣設計，可拼接為P助與粉紅兔兔的下午茶時光組圖。兌換方式：集滿4點＋＄99元或集滿20點免費隨機贈送1款",
+
+},
+{
+year:"閃光抱抱公仔",
+content:"閃光抱抱公仔共推出6款，底座為轉軸設計，扣上底座時兔兔與P助就會呈現可愛的抱抱模式，這款底座還會發光！尺寸約8.5 x 7.9公分。兌換方式：凡集滿4點＋＄99元或集滿20點免費隨機贈送1款限量共30萬個",
+
+},
+{
+	year:"下午茶時光琺瑯壺",
+content:"1000ml大容量的琺瑯壺共推出2款，尺寸約直徑11x高19公分。兌換方式：凡集滿4點＋＄599元，可指定預購1款限量共2萬個、6/6下午3點開始預購",
+}];
+let message=document.querySelectorAll(".message");
+
+for(let i=0;i<message.length;i++)
+{
+let messtop=message[i].children;
+messtop[0].innerText=timedata[i].year;
+messtop[1].innerText=timedata[i].content;
+}
+
 </script>
 
 </body>
