@@ -90,7 +90,6 @@ ul
 h1
 {
 	border-bottom:1px brown dashed; 
-	height: 80px;
 	line-height: 80px;
 }
 #content
@@ -179,13 +178,19 @@ float: left;
 		float: initial;
 
 	}
-
+.h1span
+{
+	display: block;
+	width: 100% !important;
+	}
  .contentdiv
      {
      	width: 100% !important;
      	text-align: center !important;
+
      }
 }
+
 @media screen and (max-width: 680px)
 {
      .h1span
