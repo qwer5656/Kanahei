@@ -36,11 +36,30 @@
           	 font-size: 3em;
           }
 		}
+		ul
+		{
+			list-style: none;
+			padding: 0;
+			margin:0;
+			overflow: hidden;
+		}
+		ul li
+		{
+			float: left;
+			font-size: 2em;
+			width: 50px;
+			cursor: pointer;
+
+		}
 	</style>
 </head>
 <body>
 	<h1>每日單字</h1>
-	<div>
+	<ul>
+		<li class="list_page" style="color:red">1</li>
+		<li class="list_page">2</li>
+	</ul>
+	<div class="page">
 		<div class="wrapper">
 			<h2 class="title">Certificate</h2>
 			<h3 class="title_china">證書</h3>
@@ -102,5 +121,94 @@
 			<p class="describe_china">要使用內聯樣式，請將style屬性添加到相關元素。 style屬性可以包含任何CSS屬性</p>
 		</div>
 	</div>
+<div class="page" style="display: none">
+		<div class="wrapper">
+			<h2 class="title">obsessed</h2>
+			<h3 class="title_china">迷戀</h3>
+			<p class="describe">Why are teenagers obsessed with zombies and vampire movie?</p>
+			<p class="describe_china">為何青少年迷戀吸血和鬼殭屍的電影？</p>
+		</div>
+		<div class="wrapper">
+			<h2 class="title">preoccupation</h2>
+			<h3 class="title_china">當務之急</h3>
+			<p class="describe">Our current preoccupation with zombies and vampires is easy to explain</p>
+			<p class="describe_china">要解釋我們現在對殭屍與吸血鬼的痴迷， 似乎並不困難</p>
+		</div>
+		<div class="wrapper">
+			<h2 class="title">fascination</h2>
+			<h3 class="title_china">魅力</h3>
+			<p class="describe">They're two sides of the same coin, addressing our fascination with sex, death and food</p>
+			<p class="describe_china">它們如同一枚硬幣的正反面，均以其性感、死亡與特殊的主食</p>
+		</div>
+		<div class="wrapper">
+			<h2 class="title">undead</h2>
+			<h3 class="title_china">亡靈</h3>
+			<p class="describe">They're both undead, they both feed on us, they both pass on some kind of plague and they can both be killed with specialist techniques</p>
+			<p class="describe_china">它們長生不老，以人類為食，傳播某種瘟疫，並且需要特殊手段 才能被殺死</p>
+		</div>
+		<div class="wrapper">
+			<h2 class="title">disembraining</h2>
+			<h3 class="title_china">挖出大腦</h3>
+			<p class="describe">a stake through the heart or a disembraining.</p>
+			<p class="describe_china">釘入心臟的木樁或者挖出腦子</p>
+		</div>
+		<div class="wrapper">
+			<h2 class="title">polarised</h2>
+			<h3 class="title_china">兩極化</h3>
+			<p class="describe"> But they seem to have become polarised.</p>
+			<p class="describe_china">但它們似乎被極端化了</p>
+		</div>
+		<div class="wrapper">
+			<h2 class="title">Vampires</h2>
+			<h3 class="title_china">吸血鬼</h3>
+			<p class="describe"> Vampires are the undead of choice for girls, and zombies for boys.</p>
+			<p class="describe_china">永生的吸血鬼是女孩們的選擇，而殭屍則更符合男孩們的胃口</p>
+		</div>
+		<div class="wrapper">
+			<h2 class="title">aloof</h2>
+			<h3 class="title_china">孤傲</h3>
+			<p class="describe"> Vampires are cool, aloof, beautiful, brooding creatures of the night</p>
+			<p class="describe_china">吸血鬼冷酷、孤傲、俊 美、晝伏夜出</p>
+		</div>
+		<div class="wrapper">
+			<h2 class="title">Typical</h2>
+			<h3 class="title_china">典型</h3>
+			<p class="describe">Typical moody teenage boys, basically. Zombies are dumb, brutal, ugly and mindlessly violent</p>
+			<p class="describe_china">正如喜怒無常的十幾歲男孩。殭屍則沉默寡言，凶殘，醜陋，頭腦簡單，脾氣狂躁</p>
+		</div>
+		<div class="wrapper">
+			<h2 class="title">suppose</h2>
+			<h3 class="title_china">假設</h3>
+			<p class="describe">Which makes them also like typical teenage boys, I supposes</p>
+			<p class="describe_china">也同樣是十幾歲男孩的典型特徵</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var list=document.getElementsByClassName("list_page");
+		var page=document.getElementsByClassName("page");
+		for(var i=0;i<list.length;i++)
+		{
+			(function(x)
+			{
+              list[i].addEventListener("click",function()
+			{
+				alllist();
+               page[x].style.display="block";
+                 list[x].style.color="red";
+
+			});
+			})(i);
+			
+		}
+
+		function alllist()
+		{
+			for(var i=0;i<page.length;i++)
+		    {
+                   page[i].style.display="none";
+                    list[i].style.color="black";
+		    }
+		}
+	</script>
 </body>
 </html>
